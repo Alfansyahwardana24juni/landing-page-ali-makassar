@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Akses Legal Indonesia — Landing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --ali-blue-900: #0d3c76;
+            --ali-blue-800: #0f4d8a;
+            --ali-blue-700: #135aa1;
+            --ali-yellow: #F6C146;
+            --ali-hijau: #22C55E;
+        }
+
+        html,
+        body {
+            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .ali-hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--ali-blue-900) 0%, var(--ali-blue-800) 50%, var(--ali-blue-700) 100%);
+            overflow: hidden;
+        }
+
+        .ali-blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: .5;
+            border-radius: 9999px;
+        }
+
+        .ali-blob--1 {
+            width: 300px;
+            height: 300px;
+            left: 10%;
+            top: 40%;
+            background: #1fa2ff;
+        }
+
+        .ali-blob--2 {
+            width: 220px;
+            height: 220px;
+            left: 5%;
+            top: 15%;
+            background: #ffd166;
+        }
+
+        .ali-blob--3 {
+            width: 260px;
+            height: 260px;
+            right: 8%;
+            top: 20%;
+            background: rgb(34 197 94 / var(--tw-bg-opacity, 1));
+        }
+
+        .glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .inner-glass {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .card-soft {
+            box-shadow: 0 18px 40px rgba(2, 8, 23, .15);
+        }
+
+        /* rating chips */
+        .chip {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px)
+        }
+
+        .collapsible {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .collapsible.open {
+            max-height: 500px;
+            /* Adjust this value as needed to be larger than the content */
+            transition: max-height 0.5s ease-in;
+        }
+
+        .caret {
+            transition: transform 0.3s ease;
+        }
+
+        .caret.rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .card-soft .content-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+
+        /* Warna khusus untuk tombol WhatsApp dan efek hover */
+        .whatsapp-button {
+            background-color: #25D366;
+            /* Warna hijau WhatsApp */
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1E8151;
+            /* Warna hijau yang sedikit lebih gelap untuk efek hover */
+        }
+
+        /* Warna latar belakang bonus */
+        .bonus-badge {
+            background-color: #fca5a5;
+        }
+
+        .collapsible.open {
+            grid-template-rows: 1fr
+        }
+
+        .collapsible>div {
+            overflow: hidden
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- ===================== HERO ===================== -->
+    <header class="ali-hero text-white relative">
+        <!-- Blobs -->
+        <div class="ali-blob ali-blob--1"></div>
+        <div class="ali-blob ali-blob--2"></div>
+        <div class="ali-blob ali-blob--3"></div>
+
+        <div class="mx-auto max-w-7xl px-6 md:px-8 xl:px-10 py-16 md:py-24 relative z-10">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <!-- Right content (Image) - tampil di atas ketika mobile -->
+                <div class="relative order-1 md:order-2">
+                    <div class="relative rounded-[28px] p-1 bg-white/15 border border-white/30 card-soft">
+                        <div class="rounded-[22px] overflow-hidden bg-white">
+                            <div class="relative aspect-[16/9] bg-gradient-to-br from-slate-100 to-slate-200">
+                                <img src="img/hero.jpg" class="absolute inset-0 w-full h-full object-cover"
+                                    alt="Konsultasi Online" />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -top-4 left-6 inner-glass rounded-full px-4 py-2 text-slate-900 bg-white/90 flex items-center gap-2 text-sm shadow-md">
+                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                        Konsultasi Online
+                    </div>
+                </div>
+
+                <!-- Left content (Text) - tampil di bawah ketika mobile -->
+                <div class="glass rounded-3xl p-8 md:p-10 order-2 md:order-1">
+                    <h1 class="text-3xl md:text-4xl font-extrabold leading-snug">Bukan Sekedar <span
+                            class="text-[var(--ali-yellow)]">Legalitas</span></h1>
+                    <p class="mt-3 md:mt-4 text-slate-100/90 text-lg md:text-xl max-w-xl">Ini Tentang Melindungi Mimpi
+                        dan Masa Depan Bisnis Anda</p>
+
+                    <div class="mt-6">
+                        <div class="inner-glass rounded-2xl inline-flex items-center gap-3 px-5 py-3">
+                            <p class="font-semibold text-[var(--ali-yellow)]">Akses Legal Indonesia - Aman, Cepat &
+                                Terpercaya</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 flex flex-wrap gap-3">
+                        <a href="#mengapa"
+                            class="inline-flex items-center gap-2 rounded-full bg-[var(--ali-hijau)] px-5 py-3 font-semibold text-white shadow-md">
+                            🧭 Lihat Layanan Kami
+                        </a>
+                        <a href="https://wa.me/6282151519925?text=Halo%20Akses%20Legal%2C%20Saya%20dari%20website.%20Terimakasih."
+                            target="_blank"
+                            class="inline-flex items-center gap-2 rounded-full bg-white text-slate-900 px-5 py-3 font-semibold border border-white/70">
+                            <i class="fab fa-whatsapp text-lg sm:text-xl"></i>Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">Free</span>
+                        </a>
+                    </div>
+
+                    <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
+                        <div
+                            class="flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-sm border border-white/30">
+                            ⭐ 4.8/5 <span class="opacity-80">Rating</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-sm border border-white/30">
+                            ✅ 1000+ <span class="opacity-80">Klien</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten utama bagian "Mengapa" -->
+    <section id="mengapa" class="bg-white py-14 md:py-18">
+        <div class="mx-auto max-w-7xl px-6 md:px-8 xl:px-10 text-center">
+            <!-- Icon dan judul utama -->
+            <div
+                class="mx-auto w-12 h-12 grid place-items-center rounded-full bg-blue-50 text-blue-600 border border-blue-100 mb-4">
+                ⚖
+            </div>
+            <h2 class="text-2xl md:text-[32px] font-extrabold text-[#1e3a8a] tracking-tight">
+                Mengapa Harus Dirikan PT di Akses Legal Indonesia??
+            </h2>
+            <p class="mt-3 max-w-3xl mx-auto text-slate-600">
+                "Karena di Akses Legal Indonesia, bikin PT cepat hanya 3–5 hari kerja 🔥 Dokumen terdaftar di perizinan
+                dan perpajakan resmi yang diakui pemerintah ✅ berlaku se-Indonesia dan GRATIS! konsultasi online tanpa
+                ribet!"
+            </p>
+
+            <!-- Grid untuk daftar produk/layanan -->
+            <div class="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- Kartu Produk: Pendirian PT -->
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <span
+                        class="absolute right-3 top-3 text-[10px] font-bold bg-rose-500 text-white px-2.5 py-1 rounded-full shadow">HOT</span>
+                    <img src="img/pendirian-pt.jpg" class="w-full h-[250px] object-cover object-[center_30%]"
+                        alt="Pendirian PT" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Pendirian PT</h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.8</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Di balik nama besar, selalu ada legalitas yang kuat.
+                            Resmikan usahamu dengan PT hari ini.</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
+                            <img src="img/lkpp.png" alt="LKPP" class="h-4 rounded-full">
+                            <img src="img/oss.png" alt="OSS" class="h-4 rounded-full">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-4 rounded-full">
+                            <img src="img/inaproc.png" alt="INAPROC" class="h-4 rounded-full">
+                            <img src="img/catalogue.png" alt="E-catalogue" class="h-4 rounded-full">
+                        </div>
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 4.500.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 3.999.000</div>
+                            <div class="text-[11px] text-slate-500">625 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>✅ Lihat Sudah Termasuk</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>✅</span> Pengecekan Nama PT</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Akta Notaris</li>
+                                <li class="flex items-center gap-2"><span>✅</span> SK Kemenkumham</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NPWP Coretax</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NIB OSS</li>
+                                <li class="flex items-center gap-2"><span>✅</span> SK MENTRI</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NPWP Fisik +30rb</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NIB</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Email Perusahaan</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Akun OSS</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Free 25 KBLI</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>🎁 Lihat Bonus Gratis</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>🎁</span> Konsultasi Legalitas</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Pembukaan Rekening</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Desain Kartu Nama</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Desain Kop Surat</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Desain Stempel</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Pendirian%20PT%20dengan%20harga%20Rp%203.999.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu Produk: Pendirian CV -->
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <span
+                        class="absolute right-3 top-3 text-[10px] font-bold bg-rose-500 text-white px-2.5 py-1 rounded-full shadow">TERPOPULER</span>
+                    <img src="img/pendirian-cv.jpg" class="w-full h-[250px] object-cover object-[center_40%]"
+                        alt="Pendirian CV" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Pendirian CV</h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.9</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Pilihan tepat untuk usaha bersama dengan struktur yang
+                            fleksibel.</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
+                            <img src="img/lkpp.png" alt="LKPP" class="h-4 rounded-full">
+                            <img src="img/oss.png" alt="OSS" class="h-4 rounded-full">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-4 rounded-full">
+                            <img src="img/inaproc.png" alt="INAPROC" class="h-4 rounded-full">
+                            <img src="img/catalogue.png" alt="E-catalogue" class="h-4 rounded-full">
+                        </div>
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 3.000.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 2.500.000</div>
+                            <div class="text-[11px] text-slate-500">432 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>✅ Lihat Sudah Termasuk</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>✅</span> Pengecekan Nama CV</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Akta Notaris</li>
+                                <li class="flex items-center gap-2"><span>✅</span> SK Kemenkumham</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NPWP Coretax</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NIB OSS</li>
+                                <li class="flex items-center gap-2"><span>✅</span> SK MENTRI</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NPWP Fisik +30rb</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NIB</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Email Perusahaan</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Akun OSS</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Free 25 KBLI</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>🎁 Lihat Bonus Gratis</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>🎁</span> Konsultasi Pajak</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Template Legal</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Desain Kop Surat</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Pendirian%20CV%20dengan%20harga%20Rp%202.500.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu Produk: Pendirian Yayasan -->
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <img src="img/pendirian-yayasan.jpg" class="w-full h-[250px] object-cover object-[center_55%]"
+                        alt="Pendirian Yayasan" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Pendirian Yayasan</h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.5</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Wujudkan misi sosialmu dengan dasar hukum yang sah.</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
+                            <img src="img/lkpp.png" alt="LKPP" class="h-4 rounded-full">
+                            <img src="img/oss.png" alt="OSS" class="h-4 rounded-full">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-4 rounded-full">
+                            <img src="img/inaproc.png" alt="INAPROC" class="h-4 rounded-full">
+                            <img src="img/catalogue.png" alt="E-catalogue" class="h-4 rounded-full">
+                        </div>
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 4.000.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 3.499.000</div>
+                            <div class="text-[11px] text-slate-500">198 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>✅ Lihat Sudah Termasuk</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>✅</span> Pengecekan Nama Yayasan</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Akta Notaris</li>
+                                <li class="flex items-center gap-2"><span>✅</span> SK Kemenkumham</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NPWP</li>
+                                <li class="flex items-center gap-2"><span>✅</span> NIB OSS</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Surat Domisili</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>🎁 Lihat Bonus Gratis</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>🎁</span> Konsultasi Yayasan</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Template AD/ART</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Desain Logo</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Pendirian%20Yayasan%20dengan%20harga%20Rp%205.200.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu Produk: NPWP Perusahaan -->
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <img src="img/pembuatan-npwp.png" class="w-full h-[250px] object-cover object-[center_30%]"
+                        alt="NPWP Perusahaan" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Pembuatan NPWP </h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐☆ <span
+                                class="text-slate-600 ml-1">4.6</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Lengkapi dokumen pajak perusahaan Anda dengan mudah dan
+                            cepat.</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-8 rounded-full">
+                        </div>
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 800.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 600.000</div>
+                            <div class="text-[11px] text-slate-500">310 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>✅ Lihat Sudah Termasuk</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>✅</span> Pendaftaran NPWP</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Cetak NPWP Fisik</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Aktivasi DJP</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>🎁 Lihat Bonus Gratis</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>🎁</span> Konsultasi Pajak Gratis</li>
+                                <li class="flex items-center gap-2"><span>🎁</span> Panduan e-Faktur</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20NPWP%20Perusahaan%20dengan%20harga%20Rp%20600.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu Produk: Pendaftaran Merek Dagang -->
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <span
+                        class="absolute right-3 top-3 text-[10px] font-bold bg-rose-500 text-white px-2.5 py-1 rounded-full shadow">TERFAVORIT</span>
+
+                    <img src="img/pendfataran-merek.jpg" class="w-full h-[250px] object-cover object-[center_45%]"
+                        alt="Pendaftaran Merek Dagang" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Pendaftaran Merek</h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.9</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Amankan identitas bisnismu dengan merek dagang resmi yang
+                            sah.</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
+                            <img src="img/logo-djki-new-fc718d95 1.png" alt="DJKI" class="h-4">
+
+                        </div>
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 3.000.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 2.200.000</div>
+                            <div class="text-[11px] text-slate-500">512 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>✅ Lihat Sudah Termasuk</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>✅</span> Penulusuran Merek</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Pengajuan Aplikasi</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Sertifikat Merek</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Konsultasi Hukum</li>
+                                <li class="flex items-center gap-2"><span>✅</span> Perpanjangan Merek</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+                            <span>🎁 Lihat Bonus Gratis</span>
+                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="collapsible">
+                            <ul class="mt-2 m-4 space-y-1 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><span>🎁</span> Konsultasi Gratis</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Pendaftaran%20Merek%20Dagang%20dengan%20harga%20Rp%202.200.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== POPULAR PRODUCTS ===================== -->
+    <section id="populer" class="bg-white">
+        <div class="mx-auto max-w-7xl px-6 md:px-8 xl:px-10 py-14 md:py-18 text-center">
+            <div
+                class="mx-auto w-12 h-12 grid place-items-center rounded-full bg-blue-50 text-blue-600 border border-blue-100 mb-4">
+                🚀
+            </div>
+
+            <h2 class="text-center text-2xl md:text-3xl font-extrabold text-slate-800">Layanan Lainnya</h2>
+            <p class="text-center text-slate-500 max-w-2xl mx-auto mt-2">Solusi lengkap untuk mengembangkan bisnis Anda
+                ke level selanjutnya dengan layanan profesional terpercaya</p>
+
+            <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Kartu Produk: Pendaftaran Merek Dagang -->
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <span
+                        class="absolute right-3 top-3 text-[10px] font-bold bg-rose-500 text-white px-2.5 py-1 rounded-full shadow">TERFAVORIT</span>
+
+                    <img src="img/pendfataran-merek.jpg" class="w-full h-[250px] object-cover object-[center_45%]"
+                        alt="Pendaftaran Merek Dagang" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Izin Edar Halal-PIRT</h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.5</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Bukan cuma surat halal, tapi juga kepercayaan dan
+                            keterlibatan keimanan konsumen untuk lebih terlindungi.</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 1.500.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 999.000</div>
+                            <div class="text-[11px] text-slate-500">127 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Izin%20Edar%20Halal-PIRT%20dengan%20harga%20Rp%20999.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <span
+                        class="absolute right-3 top-3 text-[10px] font-bold bg-rose-500 text-white px-2.5 py-1 rounded-full shadow">TERFAVORIT</span>
+
+                    <img src="img/pegang-sbu.jpg" class="w-full h-[250px] object-cover object-[center_45%]"
+                        alt="Pendaftaran Merek Dagang" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Pendaftaran SBU</h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.8</span></div>
+                        <p class="mt-2 text-sm text-slate-600">SBU bukan cuma sertifikat, tapi tiket masuk ke proyek
+                            besar. Saatnya naik level!
+
+                            .</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 3.500.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 2.999.000</div>
+                            <div class="text-[11px] text-slate-500">89 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Pendaftaran%20SBU%20dengan%20harga%20Rp%202.999.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <img src="img/co-working.jpeg" class="w-full h-[250px] object-cover object-[center_45%]"
+                        alt="Pendaftaran Merek Dagang" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Co-Working
+                        </h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.6</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Kerja dari rumah bikin jenuh? Yuk pindah ke co-working,
+                            tempat di mana produktivitas bertemu networking.
+
+
+                            sah.</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm"></div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 800.000</div>
+                            <div class="text-[11px] text-slate-500">156 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Co-Working%20dengan%20harga%20Rp%20800.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    <img src="img/website-perusahaan.jpg" class="w-full h-[250px] object-cover object-[center_45%]"
+                        alt="Pendaftaran Merek Dagang" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Website Perusahaan
+                        </h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.7</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Website bukan cuma halaman, tapi prestasi sesungguhnya.
+                            Bangun kesan pertama yang meyakinkan di dunia digital.</p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 2.500.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 1.500.000</div>
+                            <div class="text-[11px] text-slate-500">203 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Website%20Perusahaan%20dengan%20harga%20Rp%201.500.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+                <article
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+
+                    <img src="img/virtual-office.png" class="w-full h-[250px] object-cover object-[center_45%]"
+                        alt="Pendaftaran Merek Dagang" />
+                    <div class="p-6 text-left">
+                        <h3 class="text-lg font-bold">Virtual Office
+
+                        </h3>
+                        <div class="flex items-center gap-1 text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ <span
+                                class="text-slate-600 ml-1">4.5</span></div>
+                        <p class="mt-2 text-sm text-slate-600">Usahamu layak punya alamat yang meyakinkan. Virtual
+                            Office bisa bikin bisnis profesional, tanpa biaya sewa mahal.
+
+                        </p>
+                    </div>
+                    <div class="p-6 flex flex-col items-center justify-center">
+
+                        <div class="text-center">
+                            <div class="text-slate-400 line-through text-sm">Rp 2.500.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 1.750.000</div>
+                            <div class="text-[11px] text-slate-500">98 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 space-y-3">
+
+                        <a href="https://wa.me/6282151519925?text=Halo%20admin%20saya%20tertarik%20dengan%20produk%20Virtual%20Office%20dengan%20harga%20Rp%201.750.000"
+                            target="_blank"
+                            class="whatsapp-button w-full inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold py-3"><i
+                                class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                            Konsultasi Gratis <span
+                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-100 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 w-full">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header: Sedikit lebih menarik dengan ikon -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#142A5C] mb-4">
+                    <i class="fas fa-question-circle text-[#FF8C00] mr-2"></i>
+                    Pertanyaan Yang Sering Diajukan
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
+                    Temukan jawaban untuk pertanyaan umum seputar Legalitas Usaha
+                </p>
+            </div>
+
+            <!-- FAQ Items dengan desain yang lebih halus dan interaktif -->
+            <div class="space-y-4">
+
+                <!-- FAQ 1: Perbedaan PT dan CV -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-[#142A5C] overflow-hidden">
+                    <button
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none transition-colors duration-200"
+                        onclick="toggleFAQ(1)">
+                        <h3 class="text-base sm:text-lg font-semibold text-[#142A5C] pr-4">
+                            Apa perbedaan utama antara PT dan CV?
+                        </h3>
+                        <svg id="icon-1" class="w-6 h-6 text-[#142A5C] transform transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="answer-1"
+                        class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                                PT (Perseroan Terbatas) adalah badan hukum yang memisahkan harta kekayaan pemilik
+                                dari perusahaan, sehingga tanggung jawab finansial terbatas hanya pada modal yang
+                                disetorkan. Ini cocok untuk usaha skala besar yang berorientasi profit.
+                                <br><br>
+                                CV (Persekutuan Komanditer) adalah persekutuan bisnis yang tidak memiliki badan
+                                hukum. Tanggung jawabnya tidak terbatas, artinya harta kekayaan pribadi pemilik dapat
+                                ikut dipertanggungjawabkan. CV lebih fleksibel dan cocok untuk usaha kecil hingga
+                                menengah.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2: Proses Pendirian PT -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-[#142A5C] overflow-hidden">
+                    <button
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none transition-colors duration-200"
+                        onclick="toggleFAQ(2)">
+                        <h3 class="text-base sm:text-lg font-semibold text-[#142A5C] pr-4">
+                            Berapa lama waktu yang dibutuhkan untuk mendirikan PT?
+                        </h3>
+                        <svg id="icon-2" class="w-6 h-6 text-[#142A5C] transform transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="answer-2"
+                        class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                                Dengan layanan dari Akses Legal Indonesia, proses pendirian PT dapat diselesaikan dengan
+                                cepat, biasanya hanya dalam waktu 3-5 hari kerja. Waktu ini sudah termasuk
+                                pengurusan Akta Notaris, SK Kemenkumham, NPWP, dan NIB.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3: Pentingnya Merek Dagang -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-[#142A5C] overflow-hidden">
+                    <button
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none transition-colors duration-200"
+                        onclick="toggleFAQ(3)">
+                        <h3 class="text-base sm:text-lg font-semibold text-[#142A5C] pr-4">
+                            Mengapa saya harus mendaftarkan merek dagang?
+                        </h3>
+                        <svg id="icon-3" class="w-6 h-6 text-[#142A5C] transform transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="answer-3"
+                        class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                                Mendaftarkan merek dagang sangat penting untuk melindungi identitas bisnis Anda dari
+                                penggunaan ilegal oleh pihak lain. Dengan sertifikat merek dagang yang sah dari DJKI,
+                                Anda memiliki hak eksklusif untuk menggunakan merek tersebut, dan bisa menuntut jika ada
+                                yang menjiplak.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4: Perbedaan Yayasan dan PT -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-[#142A5C] overflow-hidden">
+                    <button
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none transition-colors duration-200"
+                        onclick="toggleFAQ(4)">
+                        <h3 class="text-base sm:text-lg font-semibold text-[#142A5C] pr-4">
+                            Apa perbedaan mendasar antara Yayasan dan PT?
+                        </h3>
+                        <svg id="icon-4" class="w-6 h-6 text-[#142A5C] transform transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="answer-4"
+                        class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                                Yayasan adalah badan hukum yang didirikan untuk tujuan sosial, kemanusiaan, atau
+                                keagamaan, dan tidak memiliki anggota atau pemilik dalam artian profit.
+                                <br><br>
+                                PT (Perseroan Terbatas) adalah badan usaha yang bertujuan mencari profit. Perbedaan
+                                utama terletak pada tujuan pendirian dan pengelolaan dana.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5: Pentingnya NIB -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-[#142A5C] overflow-hidden">
+                    <button
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none transition-colors duration-200"
+                        onclick="toggleFAQ(5)">
+                        <h3 class="text-base sm:text-lg font-semibold text-[#142A5C] pr-4">
+                            Apa itu NIB dan mengapa penting?
+                        </h3>
+                        <svg id="icon-5" class="w-6 h-6 text-[#142A5C] transform transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="answer-5"
+                        class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                                NIB (Nomor Induk Berusaha) adalah identitas pelaku usaha yang diterbitkan oleh
+                                sistem OSS. NIB berfungsi sebagai izin usaha, Tanda Daftar Perusahaan (TDP), dan
+                                Angka Pengenal Importir (API) sekaligus. Dengan NIB, Anda bisa memulai kegiatan usaha
+                                secara resmi dan terintegrasi dengan sistem perizinan lainnya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6: Perbedaan NPWP Pribadi dan NPWP Perusahaan -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-[#142A5C] overflow-hidden">
+                    <button
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none transition-colors duration-200"
+                        onclick="toggleFAQ(6)">
+                        <h3 class="text-base sm:text-lg font-semibold text-[#142A5C] pr-4">
+                            Apa bedanya NPWP Pribadi dan NPWP Perusahaan?
+                        </h3>
+                        <svg id="icon-6" class="w-6 h-6 text-[#142A5C] transform transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="answer-6"
+                        class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                                NPWP Pribadi adalah Nomor Pokok Wajib Pajak untuk individu (perorangan) yang
+                                digunakan untuk membayar pajak penghasilan pribadi.
+                                <br><br>
+                                NPWP Perusahaan adalah NPWP untuk badan usaha, seperti PT, CV, atau Yayasan. Ini
+                                digunakan untuk melaporkan dan membayar pajak yang terkait dengan kegiatan bisnis
+                                perusahaan. Kedua NPWP ini wajib dimiliki dan dipisahkan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 7: Cara Mengetahui KBLI -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-[#142A5C] overflow-hidden">
+                    <button
+                        class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none transition-colors duration-200"
+                        onclick="toggleFAQ(7)">
+                        <h3 class="text-base sm:text-lg font-semibold text-[#142A5C] pr-4">
+                            Bagaimana cara saya tahu KBLI (Klasifikasi Baku Lapangan Usaha) yang tepat untuk usaha saya?
+                        </h3>
+                        <svg id="icon-7" class="w-6 h-6 text-[#142A5C] transform transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="answer-7"
+                        class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                                Anda dapat mencari KBLI di sistem OSS RBA (Online Single Submission Risk Based Approach)
+                                atau berkonsultasi langsung dengan tim Akses Legal Indonesia. Kami akan membantu
+                                mencocokkan jenis usaha Anda dengan KBLI yang paling sesuai, sehingga legalitas bisnis
+                                Anda sah dan terhindar dari masalah di kemudian hari.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section id="testimoni" class="bg-gradient-to-b from-slate-50 to-white">
+        <div class="mx-auto max-w-7xl px-6 md:px-8 xl:px-10 py-14 md:py-18 text-center">
+            <div
+                class="mx-auto w-12 h-12 grid place-items-center rounded-full bg-blue-50 text-blue-600 border border-blue-100 mb-4">
+                💬</div>
+            <h2 class="text-2xl md:text-[32px] font-extrabold text-[#1e3a8a] tracking-tight">Kata mereka tentang <br
+                    class="sm:hidden" /> Akses Legal Indonesia</h2>
+            <p class="mt-2 text-slate-600 max-w-2xl mx-auto">Kepercayaan klien adalah prioritas utama kami. Dengarkan
+                pengalaman mereka yang telah merasakan layanan profesional kami.</p>
+
+            <div class="mt-10 grid gap-6 md:grid-cols-4">
+                <!-- Testimonial 1 -->
+                <article class="bg-white rounded-2xl border border-slate-200 card-soft p-6 text-left">
+                    <div class="flex items-center gap-3">
+                        <img src="testimoni/1.png" alt="Yoel Yusvin" class="w-10 h-10 rounded-full object-cover" />
+                        <div>
+                            <div class="font-semibold">Yoel Yusvin</div>
+                            <div class="text-amber-500 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-sm text-slate-600">"Pengurusan cepat yang hanya berapa hari, ngurusnya juga
+                        simpel dan sudah banyak benefitnya. Top, Gak salah pilih"</p>
+                    <div class="mt-3 text-xs font-medium text-blue-700">Yoel Yusvin<br />PT Rastra Media Network
+                        Indonesia</div>
+                </article>
+
+                <!-- Testimonial 2 -->
+                <article class="bg-white rounded-2xl border border-slate-200 card-soft p-6 text-left">
+                    <div class="flex items-center gap-3">
+                        <img src="testimoni/2.png" alt="Adhy Basto" class="w-10 h-10 rounded-full object-cover" />
+                        <div>
+                            <div class="font-semibold">Adhy Basto</div>
+                            <div class="text-amber-500 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-sm text-slate-600">"Teman-teman yang punya usaha besar maupun kecil, baiknya
+                        konsultasi di ALI. Aman dan terpercaya, saya jaminannya"</p>
+                    <div class="mt-3 text-xs font-medium text-blue-700">Adhy Basto<br />PT Haha</div>
+                </article>
+
+                <!-- Testimonial 3 -->
+                <article class="bg-white rounded-2xl border border-slate-200 card-soft p-6 text-left">
+                    <div class="flex items-center gap-3">
+                        <img src="testimoni/3.png" alt="Panji" class="w-10 h-10 rounded-full object-cover" />
+                        <div>
+                            <div class="font-semibold">Panji (Jejak Petualang)</div>
+                            <div class="text-amber-500 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-sm text-slate-600">"Semua saya serahkan ke ALI"</p>
+                    <div class="mt-3 text-xs font-medium text-blue-700">Panji (Jejak Petualang)<br />PT Panji Lestari
+                        Kreatif</div>
+                </article>
+
+                <!-- Testimonial 4 -->
+                <article class="bg-white rounded-2xl border border-slate-200 card-soft p-6 text-left">
+                    <div class="flex items-center gap-3">
+                        <img src="testimoni/4.png" alt="Iwan Coy" class="w-10 h-10 rounded-full object-cover" />
+                        <div>
+                            <div class="font-semibold">Iwan Coy</div>
+                            <div class="text-amber-500 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-sm text-slate-600">"Saya baru membuat CV saya di Akseslegal.id, jadi yang mau
+                        mengurus CV/PT, Merek, apapun itu boleh langsung hubungi Akseslegal.id"</p>
+                    <div class="mt-3 text-xs font-medium text-blue-700">Iwan Coy<br />CV Gorden Indonesia</div>
+                </article>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-12 flex items-center justify-center gap-10 text-slate-700">
+                <div class="text-center">
+                    <div class="text-xl font-bold text-blue-700">4.8/5</div>
+                    <div class="text-sm text-slate-500">Rating</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold text-blue-700">1000+</div>
+                    <div class="text-sm text-slate-500">Klien Puas</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold text-blue-700">5★</div>
+                    <div class="text-sm text-slate-500">Testimoni</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-200">
+        <div class="mx-auto max-w-7xl px-6 md:px-8 xl:px-10 py-14">
+            <div class="grid gap-8 md:grid-cols-3">
+                <div>
+                    <div class="text-2xl font-extrabold">akseslegal.id</div>
+                    <p class="mt-3 text-slate-400 max-w-md">Akses Legal Indonesia merupakan perusahaan berbasis digital
+                        yang bergerak dalam bidang Jasa konsultasi hukum dan pembuatan legalitas dokumen perusahaan
+                        seperti pendirian badan hukum dan badan usaha lainnya.</p>
+                </div>
+                <div>
+                    <div class="font-semibold">LINK</div>
+                    <ul class="mt-3 space-y-2 text-slate-300">
+                        <li><a href="#layanan" class="hover:underline">Layanan</a></li>
+                        <li><a class="hover:underline">Promo</a></li>
+                        <li><a class="hover:underline">Virtual Office</a></li>
+                        <li><a class="hover:underline">FAQ</a></li>
+                        <li><a class="hover:underline">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-semibold">DOWNLOAD APPS</div>
+                    <div class="mt-4 flex items-center gap-4">
+                        <img src="img/google play.png"
+                            class="h-auto w-40 rounded-xl bg-white/10 border border-white/20 grid place-items-center">
+                        </img>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 flex items-center justify-between text-xs text-slate-400">
+                <div>2025 © akseslegal.id</div>
+                <div class="flex items-center gap-4"><span>🔒 SSL Secured</span><span>⚡ Fast Response</span><span>⭐
+                        Trusted Platform</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const collapseBtns = document.querySelectorAll(".collapse-btn");
+
+        // Menambahkan event listener ke setiap tombol
+        collapseBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                // Menemukan elemen collapsible berikutnya setelah tombol yang diklik
+                const target = btn.nextElementSibling;
+                // Menemukan elemen caret (panah) di dalam tombol
+                const caret = btn.querySelector(".caret");
+
+                // Menutup semua collapsible yang sedang terbuka, kecuali yang sedang diklik
+                document.querySelectorAll(".collapsible.open").forEach(c => {
+                    if (c !== target) {
+                        c.classList.remove("open");
+                        // Menutup juga caret yang terkait
+                        const relatedCaret = c.previousElementSibling.querySelector(".caret");
+                        if (relatedCaret) {
+                            relatedCaret.classList.remove("rotate-180");
+                        }
+                    }
+                });
+
+                // Menutup semua caret yang berputar, kecuali yang sedang diklik
+                document.querySelectorAll(".caret.rotate-180").forEach(c => {
+                    if (c !== caret) {
+                        c.classList.remove("rotate-180");
+                    }
+                });
+
+                // Mengubah kelas untuk menampilkan/menyembunyikan collapsible
+                target.classList.toggle("open");
+                // Mengubah kelas untuk memutar panah (caret)
+                caret.classList.toggle("rotate-180");
+            });
+        });
+        // Menggunakan sintaks modern untuk fungsi JavaScript
+        function toggleFAQ(id) {
+            const answer = document.getElementById(`answer-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+
+            // Cek jika answer sedang terbuka
+            const isOpen = answer.classList.contains('active');
+
+            // Tutup semua FAQ yang terbuka
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            allAnswers.forEach(item => {
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.style.maxHeight = '0px';
+                    // Cari ikon yang terkait dan putar kembali
+                    const associatedIcon = item.closest('.rounded-xl').querySelector('svg');
+                    associatedIcon.classList.remove('rotate-180');
+                }
+            });
+
+            // Jika item yang diklik sebelumnya tidak terbuka, buka sekarang
+            if (!isOpen) {
+                answer.classList.add('active');
+                // Menggunakan scrollHeight untuk mendapatkan tinggi konten secara dinamis
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.classList.add('rotate-180');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Hapus status 'selected' dari semua tombol
+                    tabButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+
+                    // Sembunyikan semua panel
+                    tabPanels.forEach(panel => panel.classList.add('hidden'));
+
+                    // Atur tombol yang diklik menjadi 'selected'
+                    button.setAttribute('aria-selected', 'true');
+
+                    // Tampilkan panel yang sesuai
+                    const targetPanelId = 'panel-' + button.dataset.tab;
+                    const targetPanel = document.getElementById(targetPanelId);
+                    if (targetPanel) {
+                        targetPanel.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
