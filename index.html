@@ -26,11 +26,14 @@
             --ali-blue-700: #135aa1;
             --ali-yellow: #F6C146;
             --ali-hijau: #22C55E;
+            --brand: #0071BC;
+            --accent: #FFd800;
+            --muted: #F5F7FB;
         }
 
         html,
         body {
-            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -39,7 +42,7 @@
 
         .ali-hero {
             position: relative;
-            background: linear-gradient(135deg, var(--ali-blue-900) 0%, var(--ali-blue-800) 50%, var(--ali-blue-700) 100%);
+            background: var(--ali-blue-900);
             overflow: hidden;
         }
 
@@ -142,6 +145,20 @@
         .whatsapp-button:hover {
             background: #128c49;
         }
+
+        /* New styles for the second layout */
+        .hero-left {
+            background: #0D1B2A;
+            /* Dark blue background for the left section */
+        }
+
+        .rotated-badge {
+            position: absolute;
+            top: 50%;
+            right: 15%;
+            transform: translateY(-50%) rotate(-15deg);
+            /* Rotate the element */
+        }
     </style>
 </head>
 
@@ -156,76 +173,119 @@
         js.src = 'https://app.socialchat.id/widget/loader.js';
         document.getElementsByTagName("head")[0].appendChild(js);
     </script>
+    <section class="relative flex flex-col lg:flex-row items-center bg-[var(--brand)] overflow-hidden">
+        <!-- Left Content -->
+        <div class="lg:w-1/2 p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 text-center lg:text-left order-2 lg:order-1">
+            <!-- Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[var(--brand)] text-xs sm:text-sm font-semibold ring-[var(--brand)] ring-1 mb-6">
+                <span class="h-2 w-2 rounded-full bg-[var(--accent)]"></span> Praktis • Cepat • 100% Amanah
+            </div>
+            <h1
+                class="text-lg sm:text-xl md:text-2xl lg:text-4xl font-extrabold text-white mb-5 text-center md:text-left">
+                <span class="block">AKSES LEGAL INDONESIA</span>
+                <span class="block mt-2">
+                    Hadir Sebagai Partner Terbaik untuk
+                    <span class="bg-[var(--accent)] px-3 py-1 rounded-md text-[var(--brand)]
+                                 inline-block whitespace-nowrap mt-1">
+                        Pendirian CV/PT/YAYASAN & Daftar MEREK
+                    </span>
+                </span>
+            </h1>
+            <p class="text-white text-base sm:text-lg mb-8">
+                Proses Lebih Mudah Bersama Kami
+            </p>
 
-    <!-- ===================== HERO ===================== -->
-    <header class="ali-hero text-white relative">
-        <!-- Blobs -->
-        <div class="ali-blob ali-blob--1"></div>
-        <div class="ali-blob ali-blob--2"></div>
-        <div class="ali-blob ali-blob--3"></div>
 
-        <div class="mx-auto max-w-7xl px-6 md:px-8 xl:px-10 py-16 md:py-24 relative z-10">
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <!-- Right content (Image) - tampil di atas ketika mobile -->
-                <div class="relative order-1 md:order-2">
-                    <div class="relative rounded-[28px] p-1 bg-white/15 border border-white/30 card-soft">
-                        <div class="rounded-[22px] overflow-hidden bg-white">
-                            <div class="relative aspect-[16/9] bg-gradient-to-br from-slate-100 to-slate-200">
-                                <img src="img/hero.jpg" class="absolute inset-0 w-full h-full object-cover"
-                                    alt="Konsultasi Online" />
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute -top-4 left-6 inner-glass rounded-full px-4 py-2 text-slate-900 bg-white/90 flex items-center gap-2 text-sm shadow-md">
-                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                        Konsultasi Online
-                    </div>
-                </div>
 
-                <!-- Left content (Text) - tampil di bawah ketika mobile -->
-                <div class="glass rounded-3xl p-8 md:p-10 order-2 md:order-1">
-                    <h1 class="text-3xl md:text-4xl font-extrabold leading-snug">Bukan Sekedar <span
-                            class="text-[var(--ali-yellow)]">Legalitas</span></h1>
-                    <p class="mt-3 md:mt-4 text-slate-100/90 text-lg md:text-xl max-w-xl">Ini Tentang Melindungi Mimpi
-                        dan Masa Depan Bisnis Anda</p>
-
-                    <div class="mt-6">
-                        <div class="inner-glass rounded-2xl inline-flex items-center gap-3 px-5 py-3">
-                            <p class="font-semibold text-[var(--ali-yellow)]">Akses Legal Indonesia - Aman, Cepat &
-                                Terpercaya</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-5 flex flex-wrap gap-3">
-                        <a href="#mengapa"
-                            class="inline-flex items-center gap-2 rounded-full bg-[var(--ali-hijau)] px-5 py-3 font-semibold text-white shadow-md">
-                            🧭 Lihat Layanan Kami
-                        </a>
-                        <a href="https://wa.me/6282151519925?text=Halo%20Akses%20Legal%2C%20Saya%20dari%20website.%20Terimakasih."
-                            target="_blank"
-                            class="inline-flex items-center gap-2 rounded-full bg-white text-slate-900 px-5 py-3 font-semibold border border-white/70">
-                            <i class="fab fa-whatsapp text-lg sm:text-xl"></i>Konsultasi Gratis <span
-                                class="ml-2 text-xs font-bold bg-[var(--ali-hijau)] text-white px-2 py-0.5 rounded-full">Free</span>
-                        </a>
-                    </div>
-
-                    <div class="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
-                        <div
-                            class="flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-sm border border-white/30">
-                            ⭐ 4.8/5 <span class="opacity-80">Rating</span>
-                        </div>
-                        <div
-                            class="flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-sm border border-white/30">
-                            ✅ 1000+ <span class="opacity-80">Klien</span>
-                        </div>
-                    </div>
-
-                </div>
+            <!-- CTA Buttons -->
+            <div class="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                <a href="#harga"
+                    class="inline-flex items-center font-semibold rounded-2xl px-6 py-3 text-base sm:text-lg shadow-lg w-full sm:w-auto justify-center gap-2 transition duration-300 ease-in-out border border-white bg-transparent hover:bg-white text-white hover:text-[var(--brand)]">
+                    Lihat Paket Harga
+                </a>
+                <a href="https://wa.me/6282151519925?text=Halo%20Akses%20Legal%2C%20Saya%20dari%20website.%20Terimakasih."
+                    target="_blank"
+                    class="bg-green-500 text-white hover:bg-green-600 font-semibold rounded-2xl px-6 py-3 text-base sm:text-lg shadow-lg w-full sm:w-auto justify-center gap-2 transition duration-300 ease-in-out flex items-center">
+                    <i class="fab fa-whatsapp"></i>
+                    Konsultasi Gratis
+                </a>
             </div>
         </div>
-    </header>
 
+        <!-- Right Image -->
+        <div
+            class="lg:w-1/2 relative flex justify-center items-center w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[80vh] order-1 lg:order-2">
+            <img alt="Tim AKSES LEGAL INDONESIA sedang berdiskusi dengan klien"
+                class="w-full h-full object-cover object-[center_45%]" src="img/hero.jpg" />
+            <div
+                class="absolute top-4 left-0 right-0 flex justify-between items-center px-4 gap-4 lg:justify-end lg:right-4 lg:left-auto">
+                <img src="img/Logo Ali Biru Panjang 3.png" alt="Logo PT Akses Legal Indonesia"
+                    class="h-8 sm:h-10 md:h-12 lg:h-12 w-auto" />
+            </div>
+        </div>
+    </section>
+
+    <!-- New Product Section -->
+    <section class="py-16 md:py-24 bg-gray-50 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-800 mb-12">
+                Layanan Utama Kami
+            </h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-center">
+                <!-- Product Card: CV -->
+                <a href="#cv" class="flex flex-col items-center group">
+                    <!-- Ukuran icon lebih kecil di mobile, dan normal di tablet ke atas -->
+                    <div
+                        class="w-20 h-20 sm:w-32 sm:h-32 flex items-center justify-center rounded-full border-2 border-blue-600 mb-4 transition-colors duration-300 group-hover:bg-yellow-400">
+                        <!-- Ukuran ikon juga lebih kecil di mobile -->
+                        <i
+                            class="fas fa-building text-2xl sm:text-4xl text-blue-600 transition-colors duration-300 group-hover:text-white"></i>
+                    </div>
+                    <!-- Teks juga lebih kecil di mobile -->
+                    <p
+                        class="text-base sm:text-xl font-semibold text-slate-700 transition-colors duration-300 group-hover:text-yellow-600">
+                        CV</p>
+                </a>
+
+                <!-- Product Card: PT -->
+                <a href="#pt" class="flex flex-col items-center group">
+                    <div
+                        class="w-20 h-20 sm:w-32 sm:h-32 flex items-center justify-center rounded-full border-2 border-blue-600 mb-4 transition-colors duration-300 group-hover:bg-yellow-400">
+                        <i
+                            class="fas fa-briefcase text-2xl sm:text-4xl text-blue-600 transition-colors duration-300 group-hover:text-white"></i>
+                    </div>
+                    <p
+                        class="text-base sm:text-xl font-semibold text-slate-700 transition-colors duration-300 group-hover:text-yellow-600">
+                        PT</p>
+                </a>
+
+                <!-- Product Card: Yayasan -->
+                <a href="#yayasan" class="flex flex-col items-center group">
+                    <div
+                        class="w-20 h-20 sm:w-32 sm:h-32 flex items-center justify-center rounded-full border-2 border-blue-600 mb-4 transition-colors duration-300 group-hover:bg-yellow-400">
+                        <i
+                            class="fas fa-handshake text-2xl sm:text-4xl text-blue-600 transition-colors duration-300 group-hover:text-white"></i>
+                    </div>
+                    <p
+                        class="text-base sm:text-xl font-semibold text-slate-700 transition-colors duration-300 group-hover:text-yellow-600">
+                        Yayasan</p>
+                </a>
+
+                <!-- Product Card: Merek -->
+                <a href="#merek" class="flex flex-col items-center group">
+                    <div
+                        class="w-20 h-20 sm:w-32 sm:h-32 flex items-center justify-center rounded-full border-2 border-blue-600 mb-4 transition-colors duration-300 group-hover:bg-yellow-400">
+                        <i
+                            class="fas fa-stamp text-2xl sm:text-4xl text-blue-600 transition-colors duration-300 group-hover:text-white"></i>
+                    </div>
+                    <p
+                        class="text-base sm:text-xl font-semibold text-slate-700 transition-colors duration-300 group-hover:text-yellow-600">
+                        Merek</p>
+                </a>
+            </div>
+        </div>
+    </section>
     <!-- Konten utama bagian "Mengapa" -->
     <section id="mengapa" class="bg-white py-14 md:py-18">
         <div class="mx-auto max-w-7xl px-6 md:px-8 xl:px-10 text-center">
@@ -248,7 +308,8 @@
 
                 <!-- Kartu Produk: Pendirian PT -->
                 <article
-                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow"
+                    id="pt">
                     <span
                         class="absolute right-3 top-3 text-[10px] font-bold bg-rose-500 text-white px-2.5 py-1 rounded-full shadow">HOT</span>
                     <img src="img/pendirian-pt.jpg" class="w-full h-[250px] object-cover object-[center_30%]"
@@ -330,7 +391,8 @@
 
                 <!-- Kartu Produk: Pendirian CV -->
                 <article
-                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow"
+                    id="cv">
                     <span
                         class="absolute right-3 top-3 text-[10px] font-bold bg-rose-500 text-white px-2.5 py-1 rounded-full shadow">TERPOPULER</span>
                     <img src="img/pendirian-cv.jpg" class="w-full h-[250px] object-cover object-[center_40%]"
@@ -410,7 +472,8 @@
 
                 <!-- Kartu Produk: Pendirian Yayasan -->
                 <article
-                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow"
+                    id="yayasan">
                     <img src="img/pendirian-yayasan.jpg" class="w-full h-[250px] object-cover object-[center_55%]"
                         alt="Pendirian Yayasan" />
                     <div class="p-6 text-left">
@@ -482,7 +545,8 @@
 
                 <!-- Kartu Produk: NPWP Perusahaan -->
                 <article
-                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow"
+                    id="npwp">
                     <img src="img/pembuatan-npwp.png" class="w-full h-[250px] object-cover object-[center_30%]"
                         alt="NPWP Perusahaan" />
                     <div class="p-6 text-left">
@@ -547,7 +611,8 @@
 
                 <!-- Kartu Produk: Pendaftaran Merek Dagang -->
                 <article
-                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow">
+                    class="bg-white rounded-2xl border border-slate-200 card-soft overflow-hidden relative shadow-md hover:shadow-lg transition-shadow"
+                    id="merek">
                     <span
                         class="absolute right-3 top-3 text-[10px] font-bold bg-rose-500 text-white px-2.5 py-1 rounded-full shadow">TERFAVORIT</span>
 
