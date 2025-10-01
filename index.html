@@ -14,6 +14,70 @@
         rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .slide-up {
+            animation: slideInUp 0.8s ease-out;
+        }
+
         :root {
             --ali-blue-900: #0d3c76;
             --ali-blue-800: #0f4d8a;
@@ -81,59 +145,274 @@
         })();
     </script>
 
-    <!-- ============== HERO ================= -->
-    <header class="relative flex flex-col lg:flex-row items-stretch bg-[var(--brand)] overflow-hidden">
-        <!-- Left content -->
-        <div class="lg:w-1/2 order-2 lg:order-1 p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 text-center lg:text-left text-white">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[var(--brand)] text-xs sm:text-sm font-semibold ring-1 ring-white/30 mb-6">
-                <span class="h-2 w-2 rounded-full bg-[var(--accent)]"></span><span>Praktis • Cepat • 100% Resmi</span>
-            </div>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-                Akses Legal Indonesia <br> Solusi Cepat Pendirian
-                <span class="text-[var(--ali-yellow)]">CV/PT</span>,
-                <span class="text-[var(--ali-yellow)]">Yayasan</span> & Daftar
-                <span class="text-[var(--ali-yellow)]">Merek</span>
-            </h1>
 
-            <!-- CTA Buttons -->
-            <div class="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
-                <a href="#harga"
-                    class="inline-flex items-center font-semibold rounded-2xl px-6 py-3 text-base sm:text-lg shadow-lg w-full sm:w-auto justify-center gap-2 transition duration-300 ease-in-out border border-white bg-transparent hover:bg-white text-white hover:text-[var(--brand)]">
-                    Lihat Paket Harga
-                </a>
-                <a href="https://wa.me/6282151519925?text=Halo%20Akses%20Legal%2C%20Saya%20dari%20website.%20Terimakasih."
-                    target="_blank"
-                    class="bg-green-500 text-white hover:bg-green-600 font-semibold rounded-2xl px-6 py-3 text-base sm:text-lg shadow-lg w-full sm:w-auto justify-center gap-2 transition duration-300 ease-in-out flex items-center">
-                    <i class="fab fa-whatsapp"></i>
-                    Konsultasi Gratis
-                </a>
-            </div>
+    <!-- HERO SECTION - RESPONSIVE LAYOUT -->
+    <section class="relative bg-gradient-to-br from-[#0d3c76] via-[#0f4d8a] to-[#135aa1] overflow-hidden">
 
-
-
-            <ul class="mt-6 grid grid-cols-2 gap-3 max-w-lg mx-auto lg:mx-0 text-xs text-white/90">
-                <li class="flex items-center gap-2"><i class="fas fa-shield-alt"></i><span>Dokumen terdaftar
-                        resmi</span></li>
-                <li class="flex items-center gap-2"><i class="fas fa-bolt"></i><span>Proses 3–5 hari kerja</span></li>
-                <li class="flex items-center gap-2"><i class="fas fa-headset"></i><span>Tim support ramah</span></li>
-                <li class="flex items-center gap-2"><i class="fas fa-file-signature"></i><span>Akta & SK lengkap</span>
-                </li>
-            </ul>
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\" 60\"
+                height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\"
+                fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36
+                34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6
+                4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
         </div>
-        <!-- Right image -->
-        <div class="lg:w-1/2 order-1 lg:order-2 relative w-full 
-    h-[35vh] sm:h-[45vh] md:h-[55vh] lg:h-[65vh] xl:h-[62vh]">
 
-            <img src="img/hero.jpg" alt="Tim Akses Legal Indonesia membantu klien mengurus legalitas"
-                class="w-full h-full object-cover object-[center_100%]" />
-            <div
-                class="absolute top-4 left-0 right-0 flex justify-between items-center px-4 lg:justify-end lg:right-4 lg:left-auto">
-                <img src="img/Logo Ali Biru Panjang 3.png" alt="Logo PT Akses Legal Indonesia"
-                    class="h-8 sm:h-10 md:h-12 w-auto" />
+        <div class="relative z-10 max-w-7xl mx-auto">
+
+            <!-- Logo Header (All Devices) -->
+            <div class="px-6 pt-4 pb-2 lg:pb-0">
+                <img src="img/Logo Ali putih Panjang.png" alt="Akses Legal Indonesia"
+                    class="h-8 sm:h-10 w-auto lg:absolute lg:top-6 lg:left-8 lg:z-20">
+            </div>
+
+            <!-- MOBILE LAYOUT (< 1024px): Gambar Atas, Text Bawah -->
+            <div class="lg:hidden">
+                <!-- Gambar Hero -->
+                <div class="px-6 pt-4 pb-6 slide-up">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="img/hero.jpg" alt="Tim Akses Legal Indonesia"
+                            class="w-full h-[280px] sm:h-[360px] object-cover object-center">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                        <!-- Badge Kiri Atas -->
+                        <div
+                            class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg flex items-center gap-2 float-animation">
+                            <div class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </div>
+                            <span class="text-xs font-bold text-gray-800">2000+ Klien</span>
+                        </div>
+
+                        <!-- Rating Kanan Atas -->
+                        <div class="absolute top-4 right-4 bg-yellow-400 rounded-full px-3 py-1.5 shadow-lg float-animation"
+                            style="animation-delay: 0.3s;">
+                            <div class="flex items-center gap-1">
+                                <span class="text-sm font-bold text-gray-900">4.9</span>
+                                <i class="fas fa-star text-gray-900 text-xs"></i>
+                            </div>
+                        </div>
+
+                        <!-- Stats Overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                            <div class="grid grid-cols-3 gap-3 text-center text-white">
+                                <div>
+                                    <div class="text-xl font-bold">3-5</div>
+                                    <div class="text-xs opacity-90">Hari Kerja</div>
+                                </div>
+                                <div>
+                                    <div class="text-xl font-bold">100%</div>
+                                    <div class="text-xs opacity-90">Online</div>
+                                </div>
+                                <div>
+                                    <div class="text-xl font-bold">Resmi</div>
+                                    <div class="text-xs opacity-90">Terdaftar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="px-6 pb-8 text-white text-center">
+                    <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
+                        Akses Legal Indonesia Hadir Sebagai
+                        <span class="text-[#F6C146]">Partner Terbaik</span> Dalam Pendirian
+                        <span class="text-[#F6C146]">CV/PT/Yayasan</span> &
+                        <span class="text-[#F6C146]">Daftar Merek</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-blue-100 mb-6">
+                        Proses Lebih Mudah & Transparan Bersama Kami
+                    </p>
+
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap justify-center gap-3 mb-6">
+                        <div
+                            class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20">
+                            <i class="fas fa-check text-green-400 text-xs"></i>
+                            <span class="text-xs font-medium">Terdaftar Resmi</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20">
+                            <i class="fas fa-check text-green-400 text-xs"></i>
+                            <span class="text-xs font-medium">Proses Cepat</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20">
+                            <i class="fas fa-check text-green-400 text-xs"></i>
+                            <span class="text-xs font-medium">Harga Terjangkau</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col gap-3 mb-6">
+                        <a href="https://wa.me/6282151519925?text=Halo%20Akses%20Legal%2C%20Saya%20dari%20website.%20Mau%20konsultasi!"
+                            class="pulse-glow bg-[#25D366] hover:bg-[#128C49] text-white font-bold py-4 px-6 rounded-full text-base transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>Konsultasi Gratis Sekarang</span>
+                        </a>
+
+                        <a href="#harga"
+                            class="bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-[#0f4d8a] text-white font-semibold py-4 px-6 rounded-full text-base transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Lihat Paket & Harga</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Logos -->
+                    <div class="border-t border-white/20 pt-4">
+                        <p class="text-xs text-blue-100 mb-2 uppercase tracking-wide">Terdaftar di Portal Resmi:</p>
+                        <div class="flex flex-wrap items-center justify-center gap-3">
+                            <img src="img/oss.png" alt="OSS" class="h-5 grayscale opacity-80">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-5 rounded grayscale opacity-80">
+                            <img src="img/lkpp.png" alt="LKPP" class="h-5 rounded grayscale opacity-80">
+                            <span class="text-yellow-400 text-xs font-bold">+5 Portal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESKTOP LAYOUT (>= 1024px): Text Kiri, Gambar Kanan -->
+            <div class="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center lg:px-8 lg:py-16">
+
+                <!-- Left Content -->
+                <div class="text-white space-y-6 slide-in-left">
+
+                    <!-- Social Proof Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-semibold">
+                        <span class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-400"></span>
+                        </span>
+                        <span>2000+ Perusahaan Berhasil Didirikan</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-3xl xl:text-4xl font-extrabold leading-tight">
+                        Akses Legal Indonesia Hadir Sebagai
+                        <span class="text-[#F6C146]">Partner Terbaik</span> Dalam Pendirian
+                        <span class="text-[#F6C146]">CV/PT/Yayasan</span> &
+                        <span class="text-[#F6C146]">Daftar Merek</span>
+                    </h1>
+
+                    <!-- Sub Headline -->
+                    <p class="text-xl xl:text-2xl text-blue-100 max-w-2xl mt-4">
+                        Proses Lebih Mudah & Transparan Bersama Kami
+                    </p>
+
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span>Terdaftar Resmi</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span>Proses Cepat</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span>Harga Terjangkau</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://wa.me/6282151519925?text=Halo%20Akses%20Legal%2C%20Saya%20dari%20website.%20Mau%20konsultasi!"
+                            class="group pulse-glow bg-[#25D366] hover:bg-[#128C49] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            <span>Konsultasi Gratis Sekarang</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+
+                        <a href="#harga"
+                            class="bg-transparent border-2 border-white hover:bg-white hover:text-[#0f4d8a] text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Lihat Harga</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Logos -->
+                    <div class="pt-6 border-t border-white/20">
+                        <p class="text-sm text-blue-100 mb-3">Terdaftar & Terintegrasi di:</p>
+                        <div class="flex flex-wrap items-center gap-4 opacity-80">
+                            <img src="img/oss.png" alt="OSS" class="h-6 grayscale hover:grayscale-0 transition-all">
+                            <img src="img/coretax.jpeg" alt="Coretax"
+                                class="h-6 rounded grayscale hover:grayscale-0 transition-all">
+                            <img src="img/lkpp.png" alt="LKPP"
+                                class="h-6 rounded grayscale hover:grayscale-0 transition-all">
+                            <span class="text-yellow-400 text-sm font-semibold">+5 Portal Resmi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-yellow-400/30">
+                        <img src="img/hero.jpg" alt="Success Story" class="w-full h-auto object-cover">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+
+                        <!-- Floating Stats Card -->
+                        <div
+                            class="absolute bottom-6 left-6 right-6 bg-white rounded-2xl p-4 shadow-xl float-animation">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-[#0f4d8a]">2000+</div>
+                                    <div class="text-sm text-gray-600">PT/CV Berhasil</div>
+                                </div>
+                                <div class="border-l-2 border-gray-200 pl-4">
+                                    <div class="text-2xl font-bold text-[#0f4d8a]">5-7 Hari</div>
+                                    <div class="text-sm text-gray-600">Proses Cepat</div>
+                                </div>
+                                <div class="border-l-2 border-gray-200 pl-4">
+                                    <div class="flex items-center gap-1">
+                                        <span class="text-2xl font-bold text-[#0f4d8a]">4.9</span>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                    </div>
+                                    <div class="text-sm text-gray-600">Rating Klien</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Icons -->
+                    <div class="absolute -top-4 -right-4 bg-yellow-400 rounded-full p-4 shadow-lg float-animation"
+                        style="animation-delay: 0.5s;">
+                        <i class="fas fa-certificate text-3xl text-[#0f4d8a]"></i>
+                    </div>
+
+                    <div class="absolute top-1/4 -left-4 bg-green-500 rounded-full p-4 shadow-lg float-animation"
+                        style="animation-delay: 1s;">
+                        <i class="fas fa-shield-check text-3xl text-white"></i>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
+
+        <!-- Bottom Wave - Smooth & Clean -->
+        <div class="absolute bottom-0 left-0 right-0 -mb-1">
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto"
+                preserveAspectRatio="none">
+                <path d="M0,50 C240,20 480,20 720,50 C960,80 1200,80 1440,50 L1440,100 L0,100 Z" fill="#f9fafb"
+                    opacity="0.3" />
+                <path d="M0,60 C320,35 640,35 960,60 C1120,75 1280,75 1440,60 L1440,100 L0,100 Z" fill="#f9fafb"
+                    opacity="0.5" />
+                <path d="M0,70 C360,50 720,50 1080,70 C1260,80 1440,80 1440,70 L1440,100 L0,100 Z" fill="#f9fafb" />
+            </svg>
+        </div>
+    </section>
+
 
     <!-- ============== LAYANAN UTAMA ============== -->
     <section id="layanan" class="py-16 md:py-24 bg-gray-50 text-center -mt-10">
@@ -453,8 +732,9 @@
                             <img src="img/coretax.jpeg" alt="Coretax" class="h-8 rounded-full">
                         </div>
                         <div class="text-center">
-                            <div class="text-slate-400 line-through text-sm">Rp 800.000</div>
-                            <div class="text-[22px] font-extrabold text-blue-700">Rp 600.000</div>
+                            <div class="text-slate-400 line-through text-sm"></div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 120.000-500.000
+                            </div>
                             <div class="text-[11px] text-slate-500">310 Reviews</div>
                         </div>
                     </div>
@@ -523,8 +803,8 @@
 
                         </div>
                         <div class="text-center">
-                            <div class="text-slate-400 line-through text-sm"></div>
-                            <div class="text-[22px] font-extrabold text-blue-700">Rp 120.000-500.000</div>
+                            <div class="text-slate-400 line-through text-sm">Rp 2.500.000</div>
+                            <div class="text-[22px] font-extrabold text-blue-700">Rp 1.899.000</div>
                             <div class="text-[11px] text-slate-500">512 Reviews</div>
                         </div>
                     </div>
