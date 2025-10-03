@@ -63,6 +63,47 @@
             }
         }
 
+        @keyframes bg-slide {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(60px, 60px);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: translate(50px, -50px) scale(1.2);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+        }
+
         .float-animation {
             animation: float 3s ease-in-out infinite;
         }
@@ -77,6 +118,20 @@
 
         .slide-up {
             animation: slideInUp 0.8s ease-out;
+        }
+
+        .animate-bg-slide {
+            animation: bg-slide 20s linear infinite;
+            background-size: 60px 60px;
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+
+        .animate-float {
+            animation: float-particle 6s ease-in-out infinite;
         }
 
         :root {
@@ -150,13 +205,32 @@
     <!-- HERO SECTION - RESPONSIVE LAYOUT -->
     <section class="relative bg-gradient-to-br from-[#0d3c76] via-[#0f4d8a] to-[#135aa1] overflow-hidden">
 
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\" 60\"
-                height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\"
-                fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36
-                34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6
+        <!-- Animated Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 animate-bg-slide"
+                style="background-image: url('data:image/svg+xml,%3Csvg width=\" 60\" height=\"60\" viewBox=\"0 0 60
+                60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg
+                fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36
+                34v-4h-2v4h-6v2h4v4h2v-4h4v-2h-6zm0-30V0h-2v4h-6v2h4v4h2V6h4V4h-6zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6
                 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+
+        <!-- Animated Gradient Overlay -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 animate-gradient">
+            </div>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute w-2 h-2 bg-white rounded-full opacity-30 animate-float" style="top: 20%; left: 10%;">
+            </div>
+            <div class="absolute w-3 h-3 bg-yellow-400 rounded-full opacity-40 animate-float"
+                style="top: 60%; left: 80%; animation-delay: 2s;"></div>
+            <div class="absolute w-2 h-2 bg-white rounded-full opacity-30 animate-float"
+                style="top: 40%; left: 90%; animation-delay: 4s;"></div>
+            <div class="absolute w-3 h-3 bg-green-400 rounded-full opacity-40 animate-float"
+                style="top: 70%; left: 15%; animation-delay: 3s;"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto">
@@ -234,17 +308,17 @@
                     <div class="flex flex-wrap justify-center gap-3 mb-6">
                         <div
                             class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20">
-                            <i class="fas fa-check text-green-400 text-xs"></i>
+                            <i class="fas fa-certificate text-yellow-400 text-xs"></i>
                             <span class="text-xs font-medium">Terdaftar Resmi</span>
                         </div>
                         <div
                             class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20">
-                            <i class="fas fa-check text-green-400 text-xs"></i>
+                            <i class="fas fa-bolt text-green-400 text-xs"></i>
                             <span class="text-xs font-medium">Proses Cepat</span>
                         </div>
                         <div
                             class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20">
-                            <i class="fas fa-check text-green-400 text-xs"></i>
+                            <i class="fas fa-tag text-blue-300 text-xs"></i>
                             <span class="text-xs font-medium">Harga Terjangkau</span>
                         </div>
                     </div>
@@ -265,12 +339,23 @@
 
                     <!-- Trust Logos -->
                     <div class="border-t border-white/20 pt-4">
-                        <p class="text-xs text-blue-100 mb-2 uppercase tracking-wide">Terdaftar di Portal Resmi:</p>
-                        <div class="flex flex-wrap items-center justify-center gap-3">
-                            <img src="img/oss.png" alt="OSS" class="h-5 grayscale opacity-80">
-                            <img src="img/coretax.jpeg" alt="Coretax" class="h-5 rounded grayscale opacity-80">
-                            <img src="img/lkpp.png" alt="LKPP" class="h-5 rounded grayscale opacity-80">
-                            <span class="text-yellow-400 text-xs font-bold">+5 Portal</span>
+                        <p class="text-xs text-blue-100 mb-3 uppercase tracking-wide font-semibold">Terdaftar di Portal
+                            Resmi:</p>
+                        <div class="flex flex-wrap items-center justify-center gap-4">
+                            <div
+                                class="bg-white rounded-lg p-2 shadow-lg hover:scale-110 transition-transform duration-300">
+                                <img src="img/oss.png" alt="OSS" class="h-6 w-auto">
+                            </div>
+                            <div
+                                class="bg-white rounded-lg p-2 shadow-lg hover:scale-110 transition-transform duration-300">
+                                <img src="img/coretax.jpeg" alt="Coretax" class="h-6 w-auto">
+                            </div>
+                            <div
+                                class="bg-white rounded-lg p-2 shadow-lg hover:scale-110 transition-transform duration-300">
+                                <img src="img/lkpp.png" alt="LKPP" class="h-6 w-auto">
+                            </div>
+                            <span class="text-yellow-400 text-sm font-bold bg-white/10 px-3 py-1 rounded-full">+5
+                                Portal</span>
                         </div>
                     </div>
                 </div>
@@ -309,20 +394,20 @@
                     <!-- Trust Indicators -->
                     <div class="flex flex-wrap gap-4 text-sm">
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                                <i class="fas fa-check text-white"></i>
+                            <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-certificate text-white"></i>
                             </div>
                             <span>Terdaftar Resmi</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                                <i class="fas fa-check text-white"></i>
+                                <i class="fas fa-bolt text-white"></i>
                             </div>
                             <span>Proses Cepat</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                                <i class="fas fa-check text-white"></i>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-tag text-white"></i>
                             </div>
                             <span>Harga Terjangkau</span>
                         </div>
@@ -345,14 +430,23 @@
 
                     <!-- Trust Logos -->
                     <div class="pt-6 border-t border-white/20">
-                        <p class="text-sm text-blue-100 mb-3">Terdaftar & Terintegrasi di:</p>
-                        <div class="flex flex-wrap items-center gap-4 opacity-80">
-                            <img src="img/oss.png" alt="OSS" class="h-6 grayscale hover:grayscale-0 transition-all">
-                            <img src="img/coretax.jpeg" alt="Coretax"
-                                class="h-6 rounded grayscale hover:grayscale-0 transition-all">
-                            <img src="img/lkpp.png" alt="LKPP"
-                                class="h-6 rounded grayscale hover:grayscale-0 transition-all">
-                            <span class="text-yellow-400 text-sm font-semibold">+5 Portal Resmi</span>
+                        <p class="text-sm text-blue-100 mb-4 font-semibold">Terdaftar & Terintegrasi di:</p>
+                        <div class="flex flex-wrap items-center gap-5">
+                            <div
+                                class="bg-white rounded-xl p-3 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300">
+                                <img src="img/oss.png" alt="OSS" class="h-8 w-auto">
+                            </div>
+                            <div
+                                class="bg-white rounded-xl p-3 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300">
+                                <img src="img/coretax.jpeg" alt="Coretax" class="h-8 w-auto">
+                            </div>
+                            <div
+                                class="bg-white rounded-xl p-3 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300">
+                                <img src="img/lkpp.png" alt="LKPP" class="h-8 w-auto">
+                            </div>
+                            <span
+                                class="text-yellow-400 text-base font-bold bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-yellow-400/30">+5
+                                Portal Resmi</span>
                         </div>
                     </div>
                 </div>
@@ -413,7 +507,6 @@
             </svg>
         </div>
     </section>
-
 
     <!-- ============== LAYANAN UTAMA ============== -->
     <section id="layanan" class="py-16 md:py-24 bg-gray-50 text-center -mt-10">
@@ -512,14 +605,15 @@
                         <p class="mt-2 text-sm text-slate-600">Di balik nama besar, selalu ada legalitas yang kuat.
                             Resmikan usahamu dengan PT hari ini.</p>
                     </div>
-                    <div class="p-6 flex flex-col items-center justify-center">
-                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                    <div class="p-6 flex flex-col items-center justify-center -mt-6">
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi
+                        </h6>
                         <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
-                            <img src="img/lkpp.png" alt="LKPP" class="h-4 rounded-full">
-                            <img src="img/oss.png" alt="OSS" class="h-4 rounded-full">
-                            <img src="img/coretax.jpeg" alt="Coretax" class="h-4 rounded-full">
-                            <img src="img/inaproc.png" alt="INAPROC" class="h-4 rounded-full">
-                            <img src="img/catalogue.png" alt="E-catalogue" class="h-4 rounded-full">
+                            <img src="img/lkpp.png" alt="LKPP" class="h-6 rounded-full">
+                            <img src="img/oss.png" alt="OSS" class="h-6 rounded-full">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-6 rounded-full">
+                            <img src="img/inaproc.png" alt="INAPROC" class="h-6 rounded-full">
+                            <img src="img/catalogue.png" alt="E-catalogue" class="h-6 rounded-full">
                         </div>
                         <div class="mt-4 text-center">
                             <div class="text-slate-400 line-through text-sm">Rp 4.500.000</div>
@@ -531,7 +625,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>✅ Lihat Kelengkapan</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -555,7 +649,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>🎁 Lihat Bonus Gratis</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -597,13 +691,14 @@
                             fleksibel.</p>
                     </div>
                     <div class="p-6 flex flex-col items-center justify-center">
-                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center -mt-6">Terdaftar di Portal Resmi
+                        </h6>
                         <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
-                            <img src="img/lkpp.png" alt="LKPP" class="h-4 rounded-full">
-                            <img src="img/oss.png" alt="OSS" class="h-4 rounded-full">
-                            <img src="img/coretax.jpeg" alt="Coretax" class="h-4 rounded-full">
-                            <img src="img/inaproc.png" alt="INAPROC" class="h-4 rounded-full">
-                            <img src="img/catalogue.png" alt="E-catalogue" class="h-4 rounded-full">
+                            <img src="img/lkpp.png" alt="LKPP" class="h-6 rounded-full">
+                            <img src="img/oss.png" alt="OSS" class="h-6 rounded-full">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-6 rounded-full">
+                            <img src="img/inaproc.png" alt="INAPROC" class="h-6 rounded-full">
+                            <img src="img/catalogue.png" alt="E-catalogue" class="h-6 rounded-full">
                         </div>
                         <div class="text-center">
                             <div class="text-slate-400 line-through text-sm">Rp 2.500.000</div>
@@ -615,7 +710,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>✅ Lihat Kelengkapan</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -639,7 +734,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>🎁 Lihat Bonus Gratis</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -678,13 +773,14 @@
                         <p class="mt-2 text-sm text-slate-600">Wujudkan misi sosialmu dengan dasar hukum yang sah.</p>
                     </div>
                     <div class="p-6 flex flex-col items-center justify-center">
-                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center -mt-6">Terdaftar di Portal Resmi
+                        </h6>
                         <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
-                            <img src="img/lkpp.png" alt="LKPP" class="h-4 rounded-full">
-                            <img src="img/oss.png" alt="OSS" class="h-4 rounded-full">
-                            <img src="img/coretax.jpeg" alt="Coretax" class="h-4 rounded-full">
-                            <img src="img/inaproc.png" alt="INAPROC" class="h-4 rounded-full">
-                            <img src="img/catalogue.png" alt="E-catalogue" class="h-4 rounded-full">
+                            <img src="img/lkpp.png" alt="LKPP" class="h-6 rounded-full">
+                            <img src="img/oss.png" alt="OSS" class="h-6 rounded-full">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-6 rounded-full">
+                            <img src="img/inaproc.png" alt="INAPROC" class="h-6 rounded-full">
+                            <img src="img/catalogue.png" alt="E-catalogue" class="h-6 rounded-full">
                         </div>
                         <div class="text-center">
                             <div class="text-slate-400 line-through text-sm">Rp 4.000.000</div>
@@ -696,7 +792,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>✅ Lihat Kelengkapan</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -720,7 +816,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>🎁 Lihat Bonus Gratis</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -760,13 +856,14 @@
                             mendukung aktivitas sosial dan organisasi Anda.</p>
                     </div>
                     <div class="p-6 flex flex-col items-center justify-center">
-                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center -mt-6">Terdaftar di Portal Resmi
+                        </h6>
                         <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
-                            <img src="img/lkpp.png" alt="LKPP" class="h-4 rounded-full">
-                            <img src="img/oss.png" alt="OSS" class="h-4 rounded-full">
-                            <img src="img/coretax.jpeg" alt="Coretax" class="h-4 rounded-full">
-                            <img src="img/inaproc.png" alt="INAPROC" class="h-4 rounded-full">
-                            <img src="img/catalogue.png" alt="E-catalogue" class="h-4 rounded-full">
+                            <img src="img/lkpp.png" alt="LKPP" class="h-6 rounded-full">
+                            <img src="img/oss.png" alt="OSS" class="h-6 rounded-full">
+                            <img src="img/coretax.jpeg" alt="Coretax" class="h-6 rounded-full">
+                            <img src="img/inaproc.png" alt="INAPROC" class="h-6 rounded-full">
+                            <img src="img/catalogue.png" alt="E-catalogue" class="h-6 rounded-full">
                         </div>
                         <div class="text-center">
                             <!-- Harga coret dan harga asli sudah diperbaiki -->
@@ -779,7 +876,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>✅ Lihat Kelengkapan</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -803,7 +900,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>🎁 Lihat Bonus Gratis</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -845,7 +942,8 @@
                             cepat.</p>
                     </div>
                     <div class="p-6 flex flex-col items-center justify-center">
-                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center -mt-6">Terdaftar di Portal Resmi
+                        </h6>
                         <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
                             <img src="img/coretax.jpeg" alt="Coretax" class="h-8 rounded-full">
                         </div>
@@ -860,7 +958,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>✅ Lihat Kelengkapan</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -875,7 +973,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>🎁 Lihat Bonus Gratis</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -913,9 +1011,10 @@
                             Amankan Sekarang, agar usahamu tetap jadi milikmu.</p>
                     </div>
                     <div class="p-6 flex flex-col items-center justify-center">
-                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center">Terdaftar di Portal Resmi</h6>
+                        <h6 class="font-bold text-gray-800 text-xs mb-3 text-center -mt-6">Terdaftar di Portal Resmi
+                        </h6>
                         <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
-                            <img src="img/logo-djki-new-fc718d95 1.png" alt="DJKI" class="h-4">
+                            <img src="img/logo-djki-new-fc718d95 1.png" alt="DJKI" class="h-6">
 
                         </div>
                         <div class="text-center">
@@ -928,7 +1027,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>✅ Lihat Kelengkapan</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
@@ -946,7 +1045,7 @@
                         <button
                             class="collapse-btn w-full flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold hover:bg-slate-50">
                             <span>🎁 Lihat Bonus Gratis</span>
-                            <svg class="h-4 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-6 w-4 caret" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
                                     clip-rule="evenodd" />
